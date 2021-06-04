@@ -15,7 +15,7 @@ android {
     defaultConfig {
         applicationId "org.schabi.newpipe"
         resValue "string", "app_name", "NewPipe"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 29
         versionCode 971
         versionName "0.21.5"
@@ -226,7 +226,7 @@ dependencies {
 
     // HTTP client
     //noinspection GradleDependency --> do not update okhttp to keep supporting Android 4.4 users
-    implementation "com.squareup.okhttp3:okhttp:3.12.13"
+    implementation "com.squareup.okhttp3:okhttp:3.14.9"
 
     // Media player
     implementation "com.google.android.exoplayer:exoplayer:${exoPlayerVersion}"
@@ -256,7 +256,7 @@ dependencies {
     implementation "ch.acra:acra-core:5.7.0"
 
     // Reactive extensions for Java VM
-    implementation "io.reactivex.rxjava3:rxjava:3.0.7"
+    implementation "io.reactivex.rxjava3:rxjava:3.0.13"
     implementation "io.reactivex.rxjava3:rxandroid:3.0.0"
     // RxJava binding APIs for Android UI widgets
     implementation "com.jakewharton.rxbinding4:rxbinding:4.0.0"
