@@ -232,7 +232,7 @@ dependencies {
 
     // HTTP client
     //noinspection GradleDependency --> do not update okhttp to keep supporting Android 4.4 users
-    implementation "com.squareup.okhttp3:okhttp:3.13.1"
+    implementation "com.squareup.okhttp3:okhttp:3.14.9"
 
     // Media player
     implementation "com.google.android.exoplayer:exoplayer:${exoPlayerVersion}"
