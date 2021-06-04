@@ -108,7 +108,7 @@ ext {
     exoPlayerVersion = '2.12.3'
     googleAutoServiceVersion = '1.0-rc7'
     groupieVersion = '2.8.1'
-    markwonVersion = '4.6.0'
+    markwonVersion = '4.6.2'
 
     leakCanaryVersion = '2.5'
     stethoVersion = '1.5.1'
