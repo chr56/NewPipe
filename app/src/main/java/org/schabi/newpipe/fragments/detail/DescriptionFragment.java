@@ -151,7 +151,6 @@ public class DescriptionFragment extends BaseFragment {
         addMetadataItem(inflater, layout, false,
                 R.string.metadata_category, streamInfo.getCategory());
 
-        addTagsMetadataItem(inflater, layout);
 
         addMetadataItem(inflater, layout, false,
                 R.string.metadata_licence, streamInfo.getLicence());
@@ -167,6 +166,8 @@ public class DescriptionFragment extends BaseFragment {
             addMetadataItem(inflater, layout, false,
                     R.string.metadata_language, streamInfo.getLanguageInfo().getDisplayLanguage());
         }
+
+        addTagsMetadataItem(inflater, layout);
 
         addMetadataItem(inflater, layout, true,
                 R.string.metadata_support, streamInfo.getSupportInfo());
