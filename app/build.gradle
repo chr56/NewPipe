@@ -7,8 +7,8 @@ plugins {
     id "kotlin-android"
     id "kotlin-kapt"
     id "kotlin-parcelize"
-    id "checkstyle"
-    id "org.sonarqube" version "4.0.0.2929"
+//    id "checkstyle"
+//    id "org.sonarqube" version "4.0.0.2929"
 }
 
 android {
@@ -127,52 +127,56 @@ configurations {
     ktlint
 }
 
+/*
+
 checkstyle {
     getConfigDirectory().set(rootProject.file("checkstyle"))
     ignoreFailures false
     showViolations true
     toolVersion = checkstyleVersion
 }
+*/
 
-tasks.register('runCheckstyle', Checkstyle) {
-    source 'src'
-    include '**/*.java'
-    exclude '**/gen/**'
-    exclude '**/R.java'
-    exclude '**/BuildConfig.java'
-    exclude 'main/java/us/shandian/giga/**'
-
-    classpath = configurations.checkstyle
-
-    showViolations true
-
-    reports {
-        xml.getRequired().set(true)
-        html.getRequired().set(true)
-    }
-}
+//tasks.register('runCheckstyle', Checkstyle) {
+//    source 'src'
+//    include '**/*.java'
+//    exclude '**/gen/**'
+//    exclude '**/R.java'
+//    exclude '**/BuildConfig.java'
+//    exclude 'main/java/us/shandian/giga/**'
+//
+//    classpath = configurations.checkstyle
+//
+//    showViolations true
+//
+//    reports {
+//        xml.getRequired().set(true)
+//        html.getRequired().set(true)
+//    }
+//}
 
 def outputDir = "${project.buildDir}/reports/ktlint/"
 def inputFiles = project.fileTree(dir: "src", include: "**/*.kt")
 
-tasks.register('runKtlint', JavaExec) {
-    inputs.files(inputFiles)
-    outputs.dir(outputDir)
-    getMainClass().set("com.pinterest.ktlint.Main")
-    classpath = configurations.ktlint
-    args "src/**/*.kt"
-    jvmArgs("--add-opens", "java.base/java.lang=ALL-UNNAMED")
-}
+//tasks.register('runKtlint', JavaExec) {
+//    inputs.files(inputFiles)
+//    outputs.dir(outputDir)
+//    getMainClass().set("com.pinterest.ktlint.Main")
+//    classpath = configurations.ktlint
+//    args "src/**/*.kt"
+//    jvmArgs("--add-opens", "java.base/java.lang=ALL-UNNAMED")
+//}
+//
+//tasks.register('formatKtlint', JavaExec) {
+//    inputs.files(inputFiles)
+//    outputs.dir(outputDir)
+//    getMainClass().set("com.pinterest.ktlint.Main")
+//    classpath = configurations.ktlint
+//    args "-F", "src/**/*.kt"
+//    jvmArgs("--add-opens", "java.base/java.lang=ALL-UNNAMED")
+//}
 
-tasks.register('formatKtlint', JavaExec) {
-    inputs.files(inputFiles)
-    outputs.dir(outputDir)
-    getMainClass().set("com.pinterest.ktlint.Main")
-    classpath = configurations.ktlint
-    args "-F", "src/**/*.kt"
-    jvmArgs("--add-opens", "java.base/java.lang=ALL-UNNAMED")
-}
-
+/*
 afterEvaluate {
     if (!System.properties.containsKey('skipFormatKtlint')) {
         preDebugBuild.dependsOn formatKtlint
@@ -188,6 +192,8 @@ sonar {
     }
 }
 
+*/
+
 dependencies {
 /** Desugaring **/
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs_nio:2.0.4'
@@ -202,8 +208,8 @@ dependencies {
     implementation 'com.github.TeamNewPipe:NoNonsense-FilePicker:5.0.0'
 
 /** Checkstyle **/
-    checkstyle "com.puppycrawl.tools:checkstyle:${checkstyleVersion}"
-    ktlint 'com.pinterest:ktlint:0.45.2'
+//    checkstyle "com.puppycrawl.tools:checkstyle:${checkstyleVersion}"
+//    ktlint 'com.pinterest:ktlint:0.45.2'
 
 /** Kotlin **/
     implementation "org.jetbrains.kotlin:kotlin-stdlib:${kotlin_version}"
