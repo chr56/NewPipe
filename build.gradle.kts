@@ -21,7 +21,6 @@ plugins {
     alias(libs.plugins.jetbrains.compose.multiplatform) apply false
     alias(libs.plugins.jetbrains.kotlin.parcelize) apply false
     alias(libs.plugins.jetbrains.kotlinx.serialization) apply false
-    alias(libs.plugins.sonarqube) apply false
     alias(libs.plugins.koin) apply false
     alias(libs.plugins.about.libraries) apply false
 }
