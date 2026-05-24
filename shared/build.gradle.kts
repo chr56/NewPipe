@@ -77,6 +77,7 @@ kotlin {
         }
     }
 
+    /*
     listOf(
         iosArm64(),
         iosSimulatorArm64()
@@ -86,6 +87,7 @@ kotlin {
             isStatic = true
         }
     }
+     */
 
     jvm()
 
